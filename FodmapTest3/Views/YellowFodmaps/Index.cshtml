@@ -1,0 +1,24 @@
+﻿@model IEnumerable<YellowFodmap>
+
+ 
+
+       <div class="table-responsive">
+    <table class="table table-responsive table-borderless table-striped">
+        <thead>
+            <tr class="f-yellow-color">  <!-- Namn på varje kolumn: -->
+                <th>Gula fodmaps</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+             <!-- Visa all data från artikel-listan i tabellen: -->
+            @foreach (var item in Model)
+            {
+                <tr class="f-light-yellow-color">
+                    <td>@item.YellowFodmapList</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

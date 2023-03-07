@@ -1,0 +1,110 @@
+﻿@model Article
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        
+        <div class="row">
+            <div class="col-12">
+                    @*<div class="form-group text-center">
+                        <img class="border-info rounded-circle" style="max-width: 150px" id="ProfilePicturePreview" />
+                    </div>*@
+                   <div class="col-12">
+            <div style="max-width: 1540px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class="card-title">
+                                    @Html.DisplayFor(model => model.Hyllkantstext)
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="@Model.PictureUrl" style="width: 100%;" alt="@Model.Hyllkantstext">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <p class="card-text"><b>GTIN: </b>@Html.DisplayFor(model => model.Gtin)</p>
+                            <p class="card-text"><b>Varumärke: </b>@Html.DisplayFor(model => model.Varumarke)</p>
+                            <p class="card-text"><b>Ingredienser: </b>@Html.DisplayFor(model => model.Ingrediensforteckning)</p>
+                            <p class="card-text" style="color: red;"><b>Fodmap: </b>@Html.DisplayFor(model => model.RedFodmap)</p>
+                            <p class="card-text" style="color: orange;"><b>Fodmap: </b>@Html.DisplayFor(model => model.YellowFodmap)</p>
+                                   
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-footer ">
+                            <p class="card-text">
+                                
+                               
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                    <div class="form-group">
+                       
+                            <a class="fodmap-button button-primary" asp-action="Index">Show All</a>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@*@section Scripts{
+
+   <script>
+    
+const tags = ["mjölk", "vatten", "lök"];
+const ingredients = document.getElementById("ingrediensforteckning");
+
+$('.parasList').click(function (event) {
+  return (
+    <ul>
+      {ingredients.map((ingredient, i) => (
+        <li key={i}>
+          <Highlight tags={tags}>{ingredient.text}</Highlight>
+        </li>
+      ))}
+    </ul>
+  );
+)};
+
+</script>
+}
+*@
+
+
+
+@*   var highFodmapRed = new Array();
+
+       function loadIngredients() {
+    $.getJSON('C:\Users\julia\OneDrive\Examensarbete\FodmapTest3\FodmapTest3\wwwroot\js\HighFodmapRed.json', function (data) {
+        highFodmapRed = data.red;
+    }
+   }
+
+   function search(){
+
+    let ingredients = document.getElementById("ingrediensforteckning");
+    highFodmapRed = highFodmapRed.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+
+    let pattern = new RegExp(`${highFodmapRed}`,"gi");
+
+    paragraph.innerHTML = paragraph.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+}*@
+

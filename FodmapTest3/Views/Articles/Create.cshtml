@@ -1,0 +1,62 @@
+﻿@model Article
+
+@{
+    ViewData["Title"] = "Lägg till artikel";
+}
+
+<div class="row text">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h1>Lägg till artikel</h1>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                   
+                     <div class="form-group">
+                        <label asp-for="Gtin" class="control-label"></label>
+                        <input asp-for="Gtin" class="form-control" />
+                        <span asp-validation-for="Gtin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PictureUrl" class="control-label"></label>
+                        <input asp-for="PictureUrl" class="form-control" />
+                        <span asp-validation-for="PictureUrl" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Hyllkantstext" class="control-label"></label>
+                        <input asp-for="Hyllkantstext" class="form-control" />
+                        <span asp-validation-for="Hyllkantstext" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="Varumarke" class="control-label"></label>
+                        <input asp-for="Varumarke" class="form-control" />
+                        <span asp-validation-for="Varumarke" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Ingrediensforteckning" class="control-label"></label>
+                        <input asp-for="Ingrediensforteckning" class="form-control" />
+                        <span asp-validation-for="Ingrediensforteckning" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="RedFodmap" class="control-label"></label>
+                        <input asp-for="RedFodmap" class="form-control" />
+                        <span asp-validation-for="RedFodmap" class="text-danger"></span>
+                    </div>
+                     <div class="form-group">
+                        <label asp-for="YellowFodmap" class="control-label"></label>
+                        <input asp-for="YellowFodmap" class="form-control" />
+                        <span asp-validation-for="YellowFodmap" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show All</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

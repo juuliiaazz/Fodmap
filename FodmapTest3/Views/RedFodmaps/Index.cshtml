@@ -1,0 +1,25 @@
+﻿@model IEnumerable<RedFodmap>
+
+  
+
+   
+        <div class="table-responsive">
+    <table class="table table-responsive table-borderless table-striped">
+        <thead>
+            <tr class="f-red-color">  <!-- Namn på varje kolumn: -->
+                <th>Röda fodmaps</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+             <!-- Visa all data från artikel-listan i tabellen: -->
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.RedFodmapList</td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Article>
+
+@{
+    ViewData["Title"] = "Lista med alla artiklar";
+}
+
+
+<!-- Sökfält: -->
+	<form class="search-bar" asp-controller="Articles" asp-action="Filter">
+		<input name="searchString" type="text" placeholder="Sök"/>
+		<button type="submit" class="button button-primary"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
+	</form>
+
+  
+    
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+    {
+        <div class="col-xs-6 col-sm-6 col-md-6 col-xl-3" style="padding-bottom: 30px;">
+            <div class="fodmap-card">
+               
+                            <p class="fodmap-card-text">
+                                <h5 class="fodmap-card-title"> @Html.ActionLink(@item.Hyllkantstext, "Details", new { gtin=item.Gtin }, new { @class="action-link" })</h5>
+                                <h6 class="fodmap-fodmap-card-subtitle">@item.Varumarke</h6>
+                            </p>
+
+                        
+                        <div class="fodmap-product-card">
+                        <img class="fodmap-product-card-image" src="@item.PictureUrl" alt="@item.Hyllkantstext">
+                    </div>
+                <div class="card-block">
+                            <p class="card-text"><b>GTIN: </b>@item.Gtin</p>
+                           
+                </div>
+            </div>
+        </div>
+      }
+</div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-white">
+    <a asp-controller="Articles" asp-action="Create" class="fodmap-button button-primary"><i class="fa-solid fa-plus"></i> Lägg till artikel</a>
+</div>
+}
+
+
+
