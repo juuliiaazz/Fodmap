@@ -31,7 +31,7 @@ namespace FodmapTest3.Controllers
             return View(articleDetails);
         }
 
-       
+       // Sökruta på startsidan
         public async Task<IActionResult> Filter(string searchString)
         {
             var allArticles = await _service.GetAllAsync();

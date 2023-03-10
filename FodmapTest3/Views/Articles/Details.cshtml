@@ -4,39 +4,40 @@
     ViewData["Title"] = "Details";
 }
 
+@*Detaljer för varje produkt:*@
+
 <div class="row text">
     <div class="col-md-8 offset-2">
         
         <div class="row">
             <div class="col-12">
-                    @*<div class="form-group text-center">
-                        <img class="border-info rounded-circle" style="max-width: 150px" id="ProfilePicturePreview" />
-                    </div>*@
+                    <div class="form-group">
+                       
+                            <a class="fodmap-button button-primary" asp-action="Index">Show All</a> @*Gå tillbaka till lista med alla produkter*@
+                        </div>
+                        <br />
                    <div class="col-12">
-            <div style="max-width: 1540px;">
+            <div style="max-width: 1740px;">
                 <div class="row g-0">
                     <div class="col-md-12">
-                        <div class="card-header text-white bg-info">
+                        <div class="card-header text-white f-primary-color">
                             <p class="card-text">
                                 <h5 class="card-title">
-                                    @Html.DisplayFor(model => model.Hyllkantstext)
+                                    @Html.DisplayFor(model => model.Hyllkantstext) @*Produktens rubrik*@
                                 </h5>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="@Model.PictureUrl" style="width: 100%;" alt="@Model.Hyllkantstext">
+                        <img src="@Model.PictureUrl" style="max-width: 70%;" alt="@Model.Hyllkantstext"> @*Produktens bild*@
                     </div>
                     <div class="col-md-6">
-                        <div class="card-body">
+                        <div class="card-body"> @*All information om produkten:*@
                             <p class="card-text"><b>GTIN: </b>@Html.DisplayFor(model => model.Gtin)</p>
                             <p class="card-text"><b>Varumärke: </b>@Html.DisplayFor(model => model.Varumarke)</p>
                             <p class="card-text"><b>Ingredienser: </b>@Html.DisplayFor(model => model.Ingrediensforteckning)</p>
                             <p class="card-text" style="color: red;"><b>Fodmap: </b>@Html.DisplayFor(model => model.RedFodmap)</p>
                             <p class="card-text" style="color: orange;"><b>Fodmap: </b>@Html.DisplayFor(model => model.YellowFodmap)</p>
-                                   
-
-
 
                         </div>
                     </div>
@@ -52,10 +53,7 @@
             </div>
         </div>
 
-                    <div class="form-group">
-                       
-                            <a class="fodmap-button button-primary" asp-action="Index">Show All</a>
-                        </div>
+                    
             </div>
         </div>
     </div>

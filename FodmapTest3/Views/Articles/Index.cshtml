@@ -11,9 +11,18 @@
 		<button type="submit" class="button button-primary"><i class="fa-solid fa-magnifying-glass fa-lg"></i></button>
 	</form>
 
+    <!-- En knapp för att lägga till fler produkter i databasen. Denna knapp syns bara när man är inloggad: -->
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-white">
+    <a asp-controller="Articles" asp-action="Create" class="fodmap-button button-primary"><i class="fa-solid fa-plus"></i> Lägg till artikel</a>
+</div>
+<br />
+}
   
     
-
+    <!-- Med hjälp av en foreach-loop listas alla produkter på startsidan: -->
 <div class="container">
     <div class="row">
         @foreach (var item in Model)
@@ -21,7 +30,7 @@
         <div class="col-xs-6 col-sm-6 col-md-6 col-xl-3" style="padding-bottom: 30px;">
             <div class="fodmap-card">
                
-                            <p class="fodmap-card-text">
+                            <p class="fodmap-card-text"> <!-- En knapp för att kunna visa mer detaljerad information om varje produkt: -->
                                 <h5 class="fodmap-card-title"> @Html.ActionLink(@item.Hyllkantstext, "Details", new { gtin=item.Gtin }, new { @class="action-link" })</h5>
                                 <h6 class="fodmap-fodmap-card-subtitle">@item.Varumarke</h6>
                             </p>
@@ -40,12 +49,7 @@
 </div>
 </div>
 
-@if (User.Identity.IsAuthenticated)
-{
-    <div class="text-white">
-    <a asp-controller="Articles" asp-action="Create" class="fodmap-button button-primary"><i class="fa-solid fa-plus"></i> Lägg till artikel</a>
-</div>
-}
+
 
 
 
